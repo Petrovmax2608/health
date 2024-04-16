@@ -1,0 +1,181 @@
+/* Общие стили */
+body {
+  margin: 0; /* Убираем отступы по умолчанию */
+  padding: 0; /* Убираем внутренние отступы по умолчанию */
+  font-family: Arial, sans-serif; /* Устанавливаем шрифт */
+  background-color: #20603d; /* Устанавливаем цвет фона */
+}
+
+/* Верхняя шапка */
+.header-container {
+  background-color: #209e73; /* Цвет фона */
+  padding: 5; /* Внутренний отступ */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
+  width: 100%; /* Занимаем всю ширину экрана */
+  position: fixed; /* Фиксируем шапку */
+  top: 0; /* Располагаем шапку вверху страницы */
+  left: 0; /* Располагаем шапку влево */
+  z-index: 999; /* Устанавливаем z-index, чтобы шапка находилась поверх других элементов */
+  display: flex; /* Используем flexbox для выравнивания по центру */
+  align-items: center; /* Выравниваем элементы по центру по вертикали */
+}
+
+/* Логотип */
+.logo img {
+  font-size: 24px; /* Размер шрифта логотипа */
+  font-weight: bold; /* Жирное начертание */
+  width: 50px; /* Ширина логотипа */
+  height: auto; /* Автоматически подстраиваем высоту для сохранения пропорций */
+  margin-right: auto; /* Позволяет логотипу занимать максимально возможное пространство в шапке */
+}
+
+/* Навигация */
+.nav {
+  list-style-type: none; /* Убираем маркеры списка */
+  padding: 0; /* Убираем внутренние отступы */
+  margin: 0; /* Убираем внешние отступы */
+  text-align: center; /* Выравниваем содержимое по центру */
+  margin: auto; /* Отменяем автоматическое выравнивание слева */
+}
+
+.nav li {
+  display: inline-flex; /* Размещаем пункты меню в строку */
+  margin: 20px; /* Отступ между пунктами меню */
+}
+
+.nav li a {
+	margin-left: auto;
+  color: black; /* Цвет текста ссылок */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+/* Основной контейнер */
+.main {
+  padding-top: 60px;
+  text-align: center;
+}
+
+.container {
+  margin: 100px 50px auto;
+  text-align: center;
+}
+
+/* Счётчик калорий */
+.counter {
+	
+  background-color: #209e73;
+  padding: 5% 5%;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 100px auto;
+  width: 50em;
+   height: auto;
+}
+
+.counter__heading {
+	margin-top: 1%;
+}
+
+.counter__form {
+  margin-top: 10px;
+  margin-right: auto 50px 50px;
+}
+
+.heading {
+  color: #000;
+}
+
+.switcher__item,
+.radio {
+  margin-left: 10px 10px 10px; /* Здесь отсутствует единица измерения. Может быть, вы хотели указать margin-left? */
+  display: inline-block;
+}
+
+/* Здесь следует добавить комментарий к margin-right */
+.input__wrapper,
+.radio__wrapper {
+  margin-top: auto;
+  margin-right: 10px;
+  display: inline-block;
+  left: 0;
+   cursor: pointer;
+}
+
+.radio__description{
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 15px;
+	line-height: 25px;
+	border: 3px solid #106649;
+	border-radius: 6px;
+	left: 0;
+	  justify-content: center;
+	  
+}
+
+.input input{
+	display: grid;
+  width: 80px;
+  margin-right: 100%;
+}
+.radio input {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 15px;
+	line-height: 34px;
+	border: 1px solid #000;
+	border-radius: 6px;
+	
+   /* align-items применяется к контейнерам flex, а не к input */
+}
+
+.radios-group {
+  padding-right: auto;
+}
+
+/* Здесь добавьте комментарий, чтобы объяснить предназначение этого класса */
+.form__submit-button,
+.form__reset-button {
+  width: 180px;
+  padding: 10px;
+  background-color: #106649;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+}
+
+.form__item{
+	margin: auto;
+	line-height: 25px;
+	border: 3px solid #106649;
+	border-radius: 6px;
+}
+
+/* Здесь можно использовать более информативное имя класса, чем .button */
+.button {
+  width: 180px;
+  padding: 10px;
+  background-color: #106649;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 30px; /* Добавляем небольшой отступ между кнопками */
+}
+
+.button:hover {
+  background-color: #106649;
+}
+
+.counter__result--hidden {
+  display: none;
+}
