@@ -77,7 +77,7 @@
   <ul class="radios-group">
     <li class="radio">
       <input id="activity-minimal" name="activity" value="min" type="radio" checked required>
-      <label for="activity-minimal" class="radio__wrapper">Минимальная
+     <label for="activity-minimal" class="radio__wrapper">Минимальная
         <p class="radio__description">Сидячая работа и нет физических нагрузок</p>
       </label>
     </li>
@@ -116,7 +116,8 @@
         </div>
       </form>
       <section class="counter__result counter__result--hidden">
-        <h2 class="heading">Ваша норма калорий</h2>
+	    <fieldset class="form__item">
+        <legend class="heading">Ваша норма калорий</legend>
         <ul class="counter__result-list">
           <li class="counter__result-item">
             <h3><span id="calories-norm">3 800</span> ккал</h3>
@@ -131,6 +132,7 @@
             <p>набор веса</p>
           </li>
         </ul>
+		</fieldset>
       </section>
     </article>
   </div>
