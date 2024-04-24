@@ -23,11 +23,13 @@ body {
 
 /* Логотип */
 .logo img {
+	padding-top: 0;
+    padding-left: 0;
   font-size: 24px; /* Размер шрифта логотипа */
   font-weight: bold; /* Жирное начертание */
   width: 50px; /* Ширина логотипа */
   height: auto; /* Автоматически подстраиваем высоту для сохранения пропорций */
-  margin-right: auto; /* Позволяет логотипу занимать максимально возможное пространство в шапке */
+ /* Позволяет логотипу занимать максимально возможное пространство в шапке */
 }
 
 /* Навигация */
@@ -92,16 +94,23 @@ label {
   margin-bottom: 5px; /* Отступ снизу */
 }
 
+
 input[type="text"],
 input[type="password"] {
-  width: 180px; /* Ширина текстовых полей ввода */
-  padding: 10px; /* Внутренний отступ */
+	/* Ширина текстовых полей ввода */
+  padding-left: 25px; /* Внутренний отступ */
+   padding-right: 12px;
+    padding-top: 12px;
+	 padding-bottom: 10px;
   border: 1px solid #ccc; /* Граница */
   border-radius: 3px; /* Скругление углов */
 }
 
 button {
-  width: 100%; /* Ширина кнопки */
+	display: flex;
+justify-content: center;
+align-items: center;
+  width: 200px; /* Ширина кнопки */
   padding: 10px; /* Внутренний отступ */
   background-color: #106649; /* Цвет фона */
   border: none; /* Убираем границы */

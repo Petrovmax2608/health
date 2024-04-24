@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #20603d;
+  text-align: center; /* Выравнивание содержимого по центру */
 }
 
 /* Верхняя шапка */
@@ -22,11 +23,12 @@ body {
 
 /* Логотип */
 .logo img {
+  padding-top: 0;
+  padding-left: 0;
   font-size: 24px;
   font-weight: bold;
   width: 50px;
   height: auto;
-  margin-right: auto;
 }
 
 /* Навигация */
@@ -46,6 +48,35 @@ body {
 .nav li a {
   color: black;
   text-decoration: none;
+}
+
+.user-info {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5%; /* Перемещаем контейнер вправо */
+}
+
+.user-info a {
+  margin-left: 10px;
+  text-decoration: none;
+  border: 3px solid #106649;
+  background-color: #209e73;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 768px) {
+  .user-info {
+    padding-bottom: 10px;
+    position: static;
+    transform: none;
+    text-align: right;
+    margin-top: 10px;
+    padding-right: 20px;
+    right: auto; /* Сброс правого выравнивания для мобильных устройств */
+  }
 }
 
 .header-text {
@@ -71,19 +102,22 @@ body {
 /* Основной контейнер */
 .main {
   padding-top: 60px;
-  text-align: center;
 }
 
 .container {
-  margin: 100px 50px auto;
+  margin: 100px auto; /* Выравнивание по центру */
   text-align: center;
 }
 
 /* Счётчик калорий */
 .counter {
+	margin: 0% 10%;
   position: relative;
   background-color: #209e73;
-  padding: 5% 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 50px;
@@ -102,62 +136,64 @@ body {
   color: #000;
 }
 
-.switcher__item,
-.radio {
+.switcher__item{
   margin-left: 10px;
   display: inline-block;
 }
 
-.input__wrapper,
+/* Стили для радио-кнопок */
+.radio {
+  margin-bottom: 20px; /* Увеличим отступ между кнопками */
+  text-align: center; /* Выравниваем содержимое по центру */
+}
+
 .radio__wrapper {
-  margin-top: 10px;
-  margin-right: 10px;
-  display: inline-block;
-  left: 100%;
-  cursor: pointer;
+  display: inline-block; /* Делаем обёртку инлайновым блоком */
+  padding: 15px; /* Добавим немного внутренних отступов */
+  border-radius: 10px; /* Закруглим углы */
+  transition: background-color 0.3s; /* Плавное изменение цвета фона */
 }
 
 .radio__description {
-  display: inline-block;
-  cursor: pointer;
-  padding: 0px 15px;
-  line-height: 25px;
-  border: 3px solid #106649;
-  border-radius: 6px;
-  left: 0;
-  justify-content: center;
-  text-align: -webkit-auto;
+  margin-left: 20px; /* Увеличим отступ слева */
+  font-size: 16px; /* Немного увеличим размер шрифта */
+  color: #black; /* Цвет текста */
+}
+
+/* При наведении изменяем цвет фона и добавляем тень */
+.radio:hover .radio__wrapper {
+  background-color: #106649;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* При активации кнопки изменяем цвет фона */
+.radio input[type="radio"]:checked + .radio__wrapper {
+  background-color: #106649;
+  color: black; /* Изменяем цвет текста при выборе */
 }
 
 .input input {
-  border: 3px solid #106649;
-  width: 80px;
-  margin-right: 100%;
-  background-color: #209e73;
-  color: black;
-  text-align: center;
-  border-radius: 6px;
+     margin-left: auto;
+    margin-right: auto;
+    width: 6em;
+    border: 3px solid #106649;
+    width: 180px;
+    background-color: #209e73;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
 }
 
 ::placeholder {
   text-align: center;
 }
 
-.radio input {
-  display: inline-block;
-  background-color: #209e73;
-  cursor: pointer;
-  padding: 0px 15px;
-  line-height: 34px;
-  border: 1px solid #000;
-  border-radius: 6px;
-}
-
 .radios-group {
-     max-width: 94%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  font-size: 20px;
+  max-width: 94%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .form__submit-button,
@@ -176,6 +212,7 @@ body {
 }
 
 .form__item {
+  width: 100%;
   margin: auto;
   line-height: 25px;
   border: 3px solid #106649;
@@ -220,23 +257,23 @@ body {
   font-weight: bold;
   color: #333;
 }
+
 /* Переключатели "Мужчина" и "Женщина" */
 .switcher {
-      display: flex;
-    align-items: stretch;
-    margin: 0;
-    padding: 0;
-
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 23px;
-    text-align: center;
-    border-radius: 4px;
-    list-style: none;
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  border-radius: 4px;
+  list-style: none;
 }
 
 .switcher__item {
-	    flex: 1 1 0;
+  flex: 1 1 0;
 }
 
 .switcher__item input[type="radio"] {
@@ -264,10 +301,34 @@ body {
 }
 
 .counter__result-list {
-	       display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: inherit;
-    list-style: none;
+  padding-left: 10px;
+  display: inherit;
+  justify-content: center;
+  padding: initial;
+  list-style: none;
 }
 
+.counter__result-item {
+  padding: 10px;
+}
+
+.counter__result-item h3 {
+  line-height: 25px;
+  border: 3px solid #106649;
+  border-radius: 6px;
+  padding: 0px 15px;
+  margin: auto 30%;
+}
+
+.form__item input[type="text"] {
+  width: 60%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 3px solid #106649;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+input[type="radio" i] {
+	visibility: hidden;
+}
