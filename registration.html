@@ -13,8 +13,8 @@
         <div class="logo"><img src="logo.png" alt="Логотип"></div>
         <ul class="nav">
 			<li><a href="login.html">Вход</a></li>
-            <li><a href="main.html">Главная</a></li>
-            <li><a href="#">О нас</a></li>
+            <li><a href="main.php">Калькулятор калорий</a></li>
+            <li><a href="imt.html">ИМТ</a></li>
             <li><a href="#">Услуги</a></li>
         </ul>
     </div>
@@ -24,8 +24,8 @@
    
 	   </div>
   </header>
-  <div class="login-container">
-    <form id="login-form">
+ <div class="login-container">
+    <form id="login-form" method="post" action="registration.php"> <!-- Добавлены атрибуты method и action -->
       <h2>Регистрация</h2>
       <div class="input-group">
         <label for="username">Логин:</label>
