@@ -3,42 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Вход</title>
-  <link rel="stylesheet" href="styles.css">
-   <link rel="icon" href="logo.png" type="image/x-icon">
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/styleheader.css">
+  <link rel="icon" href="include/logo.png" type="image/x-icon">
 </head>
 <body>
 
-   <div class="header-container">
-        <div class="logo"><img src="logo.png" alt="Логотип"></div>
-        <ul class="nav">
-			<li><a href="login.html">Вход</a></li>
-            <li><a href="main.php">Калькулятор калорий</a></li>
-            <li><a href="imt.html">ИМТ</a></li>
-            <li><a href="#">Услуги</a></li>
-        </ul>
-    </div>
+<div class="header-container">
+  <div class="logo"><img src="include/logo.png" alt="Логотип"></div>
+  <nav class="nav">
+    <li><a href="login.html">Вход</a></li>
+    <li><a href="main.php">Калькулятор калорий</a></li>
+    <li><a href="quit.php">Привычки</a></li>
+    <li><a href="#">Услуги</a></li>
+  </nav>
+</div>
 
-<header>
-<div class="logo">
-   
-	   </div>
-  </header>
- <div class="login-container">
-    <form id="login-form" method="post" action="registration.php"> <!-- Добавлены атрибуты method и action -->
-      <h2>Регистрация</h2>
-      <div class="input-group">
-        <label for="username">Логин:</label>
-        <input type="text" id="username" name="username" required>
-      </div>
-      <div class="input-group">
-        <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password" required>
-      </div>
-      <button type="submit">Зарегистрироваться</button>
-    </form>
-  </div>
-<div>
-  <script src="script.js"></script>
+<div class="login-container">
+  <form id="login-form" method="post" action="registration.php">
+    <h2>Регистрация</h2>
+    <div class="input-group">
+      <label for="username">Логин:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="input-group">
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit">Зарегистрироваться</button>
+  </form>
+</div>
+
+<script src="include/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #20603d;
+}
+
+.header-container {
+  background-color: #209e73;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  overflow: hidden;
+}
+
+.login-container {
+  background-color: #209e73;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  top: 30px;
+  width: 200px;
+  max-width: calc(100% - 40px);
+  margin: 100px auto 0;
+}
+
+h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding-left: 25px;
+  padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  padding: 10px;
+  background-color: #106649;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #106649;
+}
+
+.line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #106649;
+  border: none;
+  margin: 0 10px;
+}
+
+.register-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  color: #106649;
+}
+
+.auth-button,
+.auth-link {
+  width: 180px;
+  padding: 10px;
+  background-color: #106649;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 14px; 
+}
+
+.auth-button:hover,
+.auth-link:hover {
+  background-color: #106649;
+}
+
+.counter__result {
+  padding: 20px;
+  text-align: center;
+}
+
+.counter__result .heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.counter__result-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.counter__result-item {
+  margin-bottom: 20px;
+}
+
+.counter__result-item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.counter__result-item p {
+  font-size: 16px;
+  color: #888;
+}
+
+section.counter__result.counter__result--hidden {
+  display: none;
+}

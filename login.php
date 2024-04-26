@@ -23,7 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows > 0) {
             // Авторизация прошла успешно
+            $user_data = $result->fetch_assoc(); // Получаем данные пользователя из результата запроса
             $_SESSION['username'] = $username;
+            $_SESSION['user_id'] = $user_data['user_id']; // Сохраняем user_id в сессию
             header("Location: main.php"); // Перенаправление на главную страницу
             exit();
         } else {

@@ -18,6 +18,6 @@ if (ini_get("session.use_cookies")) {
 session_destroy();
 
 // Перенаправить на страницу main.php
-header("Location: main.php");
+header("Location: login.html");
 exit;
 ?>

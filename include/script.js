@@ -1,10 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('form[name="counter"]');
+  const form = document.forms['counter'];
   const calculateButton = document.querySelector('button[name="submit"]');
   const clearButton = document.querySelector('button[name="reset"]');
   const counterResult = document.querySelector('.counter__result');
   const activityRadios = document.querySelectorAll('input[name="activity"]');
   const genderRadios = document.querySelectorAll('input[name="gender"]');
+  const bmiResult = document.getElementById('bmi-result');
+  const toast = document.querySelector(".toast");
+  const progress = document.querySelector(".progress");
+  let timer1, timer2;
+
+  toast.classList.remove("active");
+  progress.classList.remove("active");
 
   let activityCoefficient = 1.2;
   let genderFactor = 5;
@@ -39,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
     genderRadios.forEach(function(radio) {
       if (radio.checked) {
         genderFactor = radio.value === 'male' ? 5 : -161;
-        calculateCalories();
       }
     });
   }
@@ -69,37 +75,69 @@ document.addEventListener('DOMContentLoaded', function() {
     caloriesMinimal.textContent = Math.round(weightLossCalories);
     caloriesMaximal.textContent = Math.round(weightGainCalories);
 
+    // Calculate BMI
+    const heightInMeters = heightInput / 100;
+    const bmi = calculateBMI(weightInput, heightInMeters);
+
+    // Display BMI
+    displayBMI(bmi);
+    
     counterResult.classList.remove('counter__result--hidden');
-    calculateButton.removeAttribute('disabled');
   }
 
-  activityRadios.forEach(function(radio) {
-    radio.addEventListener('change', function() {
-      updateActivityCoefficient();
-      calculateCalories();
-    });
-  });
+  function calculateBMI(weight, height) {
+    return (weight / (height * height)).toFixed(1);
+  }
 
-  genderRadios.forEach(function(radio) {
-    radio.addEventListener('change', function() {
-      updateGenderFactor();
-    });
-  });
+  function displayBMI(bmi) {
+    bmiResult.textContent = bmi;
+  }
 
   clearButton.addEventListener('click', function(event) {
     event.preventDefault();
-    document.getElementById('age').value = '';
-    document.getElementById('height').value = '';
-    document.getElementById('weight').value = '';
-    document.getElementById('calories-norm').textContent = '0';
-    document.getElementById('calories-minimal').textContent = '0';
-    document.getElementById('calories-maximal').textContent = '0';
+    const form = document.forms['counter'];
+    const inputs = form.querySelectorAll('input[type="text"]');
+    inputs.forEach(input => input.value = ''); // Clear input values
+
+    const bmiResult = document.getElementById('bmi-result');
+    bmiResult.textContent = ''; // Clear BMI result
+
     counterResult.classList.add('counter__result--hidden');
-    calculateButton.removeAttribute('disabled');
+
+    // Показать сообщение о успешном очищении полей
+    showToast("Поля очищены");
   });
 
-  form.addEventListener('submit', function(event) {
+  calculateButton.addEventListener('click', function(event) {
     event.preventDefault();
-    calculateCalories();
+    if (!isEmptyInput()) {
+      calculateCalories();
+      // Показать сообщение о завершении расчета
+      showToast("Готово");
+    }
   });
+
+  // Функция для показа toast-сообщения
+  function showToast(message) {
+    const toastText = document.querySelector(".toast .text");
+    toastText.textContent = message;
+    toast.classList.add("active");
+    progress.classList.add("active");
+
+    timer1 = setTimeout(() => {
+      toast.classList.remove("active");
+    }, 5000);
+
+    timer2 = setTimeout(() => {
+      progress.classList.remove("active");
+    }, 5300);
+  }
+
+  // Функция для проверки заполненности полей ввода
+  function isEmptyInput() {
+    const ageInput = document.getElementById('age').value.trim();
+    const heightInput = document.getElementById('height').value.trim();
+    const weightInput = document.getElementById('weight').value.trim();
+    return ageInput === '' || heightInput === '' || weightInput === '';
+  }
 });

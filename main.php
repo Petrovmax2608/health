@@ -1,30 +1,29 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Калькулятор калорий</title>
-  <link rel="stylesheet" href="stylesmain.css">
-  <link rel="icon" href="logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/stylesmain.css">
+  <link rel="stylesheet" href="styles/styleheader.css">
+  <link rel="icon" href="include/logo.png" type="image/x-icon">
 </head>
 <body class="page">
 <header class="header-container">
   <div class="logo">
-    <img src="logo.png" alt="Логотип">
+    <img src="include/logo.png" alt="Логотип">
   </div>
   <nav class="nav">
     <ul>
-      <li><a href="login.html">Вход</a></li>
+    <li><a href="login.html">Вход</a></li>
       <li><a href="main.php">Калькулятор калорий</a></li>
-      <li><a href="imt.html">ИМТ</a></li>
+      <li><a href="quit.php">Привычки</a></li>
       <li><a href="#">Услуги</a></li>
     </ul>
   </nav>
   <div class="user-info">
     <?php
+    session_start();
     if (isset($_SESSION['username'])) {
         echo '<span>Вы вошли как: ' . $_SESSION['username']. '</span>';
         echo '<a href="logout.php">Выход</a>';
@@ -42,16 +41,16 @@ session_start();
         <div class="form__parameters">
           <fieldset class="form__item form__parameters" name="parameters">
             <legend class="heading">ПОЛ</legend>
-                 <ul class="switcher">
-            <li class="switcher__item">
-              <input id="gender-male" name="gender" value="male" type="radio" checked required>
-              <label for="gender-male">Мужчина</label>
-            </li>
-            <li class="switcher__item">
-              <input id="gender-female" name="gender" value="female" type="radio" required>
-              <label for="gender-female">Женщина</label>
-            </li>
-          </ul>
+            <ul class="switcher">
+              <li class="switcher__item">
+                <input id="gender-male" name="gender" value="male" type="radio" checked>
+                <label for="gender-male">Мужчина</label>
+              </li>
+              <li class="switcher__item">
+                <input id="gender-female" name="gender" value="female" type="radio">
+                <label for="gender-female">Женщина</label>
+              </li>
+            </ul>
           </fieldset>
           <fieldset class="form__item form__parameters" name="parameters">
             <legend class="visually-hidden">ФИЗИЧЕСКИЕ ПАРАМЕТРЫ</legend>
@@ -85,42 +84,41 @@ session_start();
               </div>
             </div>
           </fieldset>
-<fieldset class="form__item">
-    <legend class="heading">ФИЗИЧЕСКАЯ АКТИВНОСТЬ</legend>
-    <ul class="radios-group">
-        <li class="radio">
-            <input id="activity-minimal" name="activity" value="min" type="radio" checked required>
-            <label for="activity-minimal" class="radio__wrapper">Минимальная
-                <p class="radio__description">Сидячая работа и нет физических нагрузок</p>
-            </label>
-        </li>
-        <li class="radio">
-            <input id="activity-low" name="activity" value="low" type="radio" required>
-            <label for="activity-low" class="radio__wrapper">Низкая
-                <p class="radio__description">Редкие, нерегулярные тренировки, активность в быту</p>
-            </label>
-        </li>
-        <li class="radio">
-            <input id="activity-medium" name="activity" value="medium" type="radio" required>
-            <label for="activity-medium" class="radio__wrapper">Средняя
-                <p class="radio__description">Тренировки 3-5 раз в неделю</p>
-            </label>
-        </li>
-        <li class="radio">
-            <input id="activity-high" name="activity" value="high" type="radio" required>
-            <label for="activity-high" class="radio__wrapper">Высокая
-                <p class="radio__description">Тренировки 6-7 раз в неделю</p>
-            </label>
-        </li>
-        <li class="radio">
-            <input id="activity-maximal" name="activity" value="max" type="radio" required>
-            <label for="activity-maximal" class="radio__wrapper">Очень высокая
-                <p class="radio__description">Больше 6 тренировок в неделю и физическая работа</p>
-            </label>
-        </li>
-    </ul>
-</fieldset>
-
+          <fieldset class="form__item">
+            <legend class="heading">ФИЗИЧЕСКАЯ АКТИВНОСТЬ</legend>
+            <ul class="radios-group">
+              <li class="radio">
+                <input id="activity-minimal" name="activity" value="min" type="radio" checked required>
+                <label for="activity-minimal" class="radio__wrapper">Минимальная
+                  <p class="radio__description">Сидячая работа и нет физических нагрузок</p>
+                </label>
+              </li>
+              <li class="radio">
+                <input id="activity-low" name="activity" value="low" type="radio" required>
+                <label for="activity-low" class="radio__wrapper">Низкая
+                  <p class="radio__description">Редкие, нерегулярные тренировки, активность в быту</p>
+                </label>
+              </li>
+              <li class="radio">
+                <input id="activity-medium" name="activity" value="medium" type="radio" required>
+                <label for="activity-medium" class="radio__wrapper">Средняя
+                  <p class="radio__description">Тренировки 3-5 раз в неделю</p>
+                </label>
+              </li>
+              <li class="radio">
+                <input id="activity-high" name="activity" value="high" type="radio" required>
+                <label for="activity-high" class="radio__wrapper">Высокая
+                  <p class="radio__description">Тренировки 6-7 раз в неделю</p>
+                </label>
+              </li>
+              <li class="radio">
+                <input id="activity-maximal" name="activity" value="max" type="radio" required>
+                <label for="activity-maximal" class="radio__wrapper">Очень высокая
+                  <p class="radio__description">Больше 6 тренировок в неделю и физическая работа</p>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
         </div>
         <div class="form__submit">
           <button class="form__submit-button button" name="submit" type="submit">Рассчитать</button>
@@ -152,8 +150,16 @@ session_start();
     </article>
   </div>
 </main>
+<div class="toast">
+  <div class="toast-content">
+    <i class="fas fa-solid fa-check check"></i>
+    <div class="message">
+      <span class="text text-1">Готово!</span>
+    </div>
+  </div>
+  <i class="fa-solid fa-xmark close"></i>
+  <div class="progress"></div>
+</div>
 <script src="include/script.js" defer></script>
-<script src="include/bmi.js" defer></script>
-
 </body>
 </html>
