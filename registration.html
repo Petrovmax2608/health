@@ -16,12 +16,13 @@
     <li><a href="login.html">Вход</a></li>
     <li><a href="main.php">Калькулятор калорий</a></li>
     <li><a href="quit.php">Привычки</a></li>
-    <li><a href="#">Услуги</a></li>
+    <li><a href="leaders.php">Лидеры</a></li>
+    <li><a href="nutrition.php">Питание</a></li>
   </nav>
 </div>
 
 <div class="login-container">
-  <form id="login-form" method="post" action="registration.php">
+  <form id="registration-form" method="post" action="registration.php" onsubmit="return validateForm()">
     <h2>Регистрация</h2>
     <div class="input-group">
       <label for="username">Логин:</label>
@@ -35,6 +36,24 @@
   </form>
 </div>
 
+<script>
+function validateForm() {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  if (username.length < 5) {
+    alert('Логин должен быть не менее 5 символов.');
+    return false;
+  }
+
+  if (password.length < 8) {
+    alert('Пароль должен быть не менее 8 символов.');
+    return false;
+  }
+
+  return true;
+}
+</script>
 <script src="include/script.js"></script>
 </body>
 </html>

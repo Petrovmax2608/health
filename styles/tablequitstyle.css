@@ -1,0 +1,52 @@
+.container {
+    margin: 175px;
+    padding: 20px;
+    border: 3px solid #87ceeb63;
+    border-radius: 10px;
+    background-color: #87ceeb63;
+    text-align: center;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+}
+
+.container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    overflow: hidden; /* Для обрезания закруглений внутри таблицы */
+}
+
+.container th, .container td {
+    padding: 10px;
+    border: 3px solid #4ab1b6;
+}
+
+.container th {
+    background-color: #87ceeb;
+}
+
+.container td:first-child {
+    border-top-left-radius: 10px; /* Закругление верхнего левого угла */
+    border-bottom-left-radius: 10px; /* Закругление нижнего левого угла */
+}
+
+.container td:last-child {
+    border-top-right-radius: 10px; /* Закругление верхнего правого угла */
+    border-bottom-right-radius: 10px; /* Закругление нижнего правого угла */
+}
+
+.container #giveup-btn, .container #start-btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    background-color: #4ab1b6;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.container #giveup-btn:hover, .container #start-btn:hover {
+    background-color: #20603d;
+}

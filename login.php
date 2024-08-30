@@ -22,19 +22,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $mysql->query($query);
 
         if ($result->num_rows > 0) {
-            // Авторизация прошла успешно
-            $user_data = $result->fetch_assoc(); // Получаем данные пользователя из результата запроса
-            $_SESSION['username'] = $username;
-            $_SESSION['user_id'] = $user_data['user_id']; // Сохраняем user_id в сессию
-            header("Location: main.php"); // Перенаправление на главную страницу
+           // Авторизация прошла успешно
+$user_data = $result->fetch_assoc(); // Получаем данные пользователя из результата запроса
+$_SESSION['username'] = $username;
+$_SESSION['user_id'] = $user_data['user_id']; // Сохраняем user_id в сессию
+$_SESSION['role'] = $user_data['role']; // Сохраняем роль в сессию
+
+            echo "<script>alert('Авторизация успешна.'); window.location.href = 'main.php';</script>";
             exit();
         } else {
             // Неверный логин или пароль
-            echo "Неверный логин или пароль.";
+            echo "<script>alert('Неверный логин или пароль.'); window.history.back();</script>";
         }
     } else {
         // Поля логина и пароля не были заполнены
-        echo "Поля логина и пароля должны быть заполнены.";
+        echo "<script>alert('Поля логина и пароля должны быть заполнены.'); window.history.back();</script>";
     }
 }
 

@@ -1,0 +1,215 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.results-container {
+    margin: 100px;
+    padding: 20px;
+    border: 3px solid #4682b4;
+    border-radius: 10px;
+    background-color: #87ceeb63;
+}
+
+.leader-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 3px solid #106649;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.leader-table th, .leader-table td {
+    font-weight: 700;
+    padding: 10px;
+    border: 3px solid #4682b4;
+}
+
+.leader-table th {
+    background-color: #87ceeb63;
+    color: black;
+}
+
+.leader-table th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.leader-table th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.leader-table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.leader-table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+form {
+    display: inline;
+}
+
+form input[type="text"], form select {
+	    font-size: 22px;
+	    margin: 3px;
+	    text-align: center;
+	    width: auto;
+	    border: 3px solid #4682b4;
+	    border-radius: 3px;
+	    background: bottom;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form button {
+    margin-top: 10px;
+    background-color: #87ceeb63;
+    padding: 5px 10px;
+    border: 3px solid #4682b4;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #106649;
+}
+
+button {
+    background-color: #87ceeb63;
+    padding: 5px 10px;
+    border: 3px solid #4682b4;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #106649;
+}
+
+select#limit {
+         border-radius: 6px;
+    border: 3px solid #106649;
+    box-sizing: border-box;
+    width: 70px;
+    margin: 10px;
+	background: fixed;
+}	
+
+input#product_name {
+	    text-align: -webkit-center;
+	    background: border-box;
+	    width: 170px;
+	    border-radius: 6px;
+	    border: 3px solid #4682b4;
+	    box-sizing: border-box;
+	    margin: 10px;
+}
+
+input#calories {
+	    text-align: -webkit-center;
+	    background: border-box;
+	    border-radius: 6px;
+	    border: 3px solid #4682b4;
+	    box-sizing: border-box;
+	    width: 170px;
+}
+input#proteins {
+	    text-align: -webkit-center;
+	    background: border-box;
+	    border-radius: 6px;
+	    border: 3px solid #4682b4;
+	    box-sizing: border-box;
+	    width: 170px;
+}
+input#fats {
+	    text-align: -webkit-center;
+	    background: border-box;
+	    border-radius: 6px;
+	    border: 3px solid #4682b4;
+	    box-sizing: border-box;
+	    width: 170px;
+}
+input#carbs {
+	    text-align: -webkit-center;
+	    background: border-box;
+	    border-radius: 6px;
+	    border: 3px solid #4682b4;
+	    box-sizing: border-box;
+	    width: 170px;
+}
+
+.pagination {
+ display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pagination-button {
+  background-color: #87ceeb63;
+  color: black;
+  border-radius: 6px;
+  padding: 5px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border: 3px solid #4682b4;
+  text-decoration: none;
+}
+
+.pagination-button:hover {
+  background-color: #106649;
+}
+
+.pagination-button.active {
+  background-color: #87ceeb63; /* Более темный оттенок зеленого для активной кнопки */
+}
+
+.pagination-button.disabled {
+    cursor: not-allowed;
+    border: 3px solid #4682b4;
+}
+
+/* Стили для формы выбора количества элементов на странице */
+form select {
+    padding: 10px;
+    border: 3px solid #4682b4;
+    border-radius: 4px;
+    background-color: #87ceeb63;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+form select:focus {
+  outline: none;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-container a {
+  padding: 10px 20px;
+  border: 1px solid #4CAF50;
+  margin: 0 5px;
+  border-radius: 4px;
+  color: #000;
