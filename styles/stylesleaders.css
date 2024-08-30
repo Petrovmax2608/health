@@ -1,0 +1,104 @@
+.results-container {
+    position: relative;
+    background-color: #87ceeb63;
+    padding: 1% 10%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    margin: 175px;
+    padding: 20px;
+    border: 3px solid #87ceeb70;
+    border-radius: 10px;
+    background-color: #87ceeb70;
+}
+
+.results-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.leader-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 3px solid #106649;
+    border-radius: 10px;
+	text-align: center;
+}
+
+.leader-table th, .leader-table td {
+    padding: 10px;
+    border: 3px solid #4682b4;
+}
+
+.leader-table th {
+    background-color: #87ceeb29;
+}
+
+.leader-table td.elapsed-days,
+.leader-table td.giveup-date,
+.leader-table td.start-date,
+.leader-table td.username,
+.leader-table td.rank {
+    margin: auto;
+    line-height: 25px;
+}
+
+.leader-table th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.leader-table th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.leader-table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.leader-table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pagination button {
+    background-color: #87ceeb;
+    color: black;
+    border-radius: 6px;
+    padding: 5px 20px; /* Increase padding for better clickability */
+    margin: 5px; /* Added margin for button spacing */
+    cursor: pointer;
+    border: 3px solid #4682b4;
+}
+
+.pagination button:hover {
+    background-color: #106649;
+}
+
+.pagination .page-button.active {
+    background-color: #4682b4;
+}
+
+.nav-button.disabled {
+    cursor: not-allowed;
+    border: 3px solid #4682b4;
+}
+
+.page-button, .nav-button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: 3px solid #106649;
+    border-radius: 6px;
+    padding: 10px 20px;
+    margin: 5px;
+}
+
+.nav-button.disabled:hover {
+    background-color: #20603d;
+}

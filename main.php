@@ -15,10 +15,11 @@
   </div>
   <nav class="nav">
     <ul>
-    <li><a href="login.html">Вход</a></li>
+      <li><a href="login.html">Вход</a></li>
       <li><a href="main.php">Калькулятор калорий</a></li>
       <li><a href="quit.php">Привычки</a></li>
-      <li><a href="#">Услуги</a></li>
+      <li><a href="leaders.php">Лидеры</a></li>
+      <li><a href="nutrition.php">Питание</a></li>
     </ul>
   </nav>
   <div class="user-info">
@@ -132,18 +133,86 @@
           <legend class="heading">Ваша норма калорий и ИМТ</legend>
           <ul class="counter__result-list">
             <li class="counter__result-item">
-              <h3><span id="calories-norm">3 800</span> ккал <p>поддержание веса</p></h3>
+              <h3><span id="calories-norm"></span> ккал <p>поддержание веса</p></h3>
             </li>
             <li class="counter__result-item">
-              <h3><span id="calories-minimal">3 300</span> ккал <p>снижение веса</p></h3>
+              <h3><span id="calories-minimal"></span> ккал <p>снижение веса</p></h3>
             </li>
             <li class="counter__result-item">
-              <h3><span id="calories-maximal">4 000</span> ккал <p>набор веса</p></h3>
+              <h3><span id="calories-maximal"></span> ккал <p>набор веса</p></h3>
             </li>
             <li class="counter__result-item">
-              <h3>Ваш ИМТ: <span id="bmi-result"></span></h3>
-              <canvas id="bmi-chart" width="400" height="200"></canvas>
+              <h3>Ваш ИМТ: <span id="bmi-result"></span>
+			 <div class="bmi-progress-container">
+  <div class="bmi-progress-bar">
+    <div class="bmi-progress-bar-fill" id="bmi-progress-bar-fill"></div>
+    <div class="bmi-marker-container">
+      <div class="bmi-marker" id="bmi-marker"><span>0</span></div>
+    </div>
+  </div>
+  <div class="bmi-labels">
+    <span class="label-left">16 <span>Недостаток</span></span>
+    <span class="label-right"><span>Избыток</span> 40</span>
+  </div>
+  <div class="info-button">
+  <button id="info-button">Что это значит?</button>
+  <div class="modal" id="info-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>
+	  ИМТ - это числовой показатель, используемый для оценки соотношения массы тела к росту человека. 
+	  Рассчитывается по формуле: вес (в килограммах) делится на квадрат роста (в метрах). 
+	  ИМТ является важным инструментом для определения нормального, недостаточного или избыточного веса, а также риска ожирения и связанных с ним заболеваний.<br>
+ Категории ИМТ:<br></p>
+ <ul class=markers>
+<li>Менее 18,5: дефицит массы тела;</li><br>
+ <li>18,5–24,9: нормальный вес;</li><br>
+<li>25–30: избыточный вес;</li><br>
+<li> Более 30: ожирение.</li></ul>
+    </div>
+  </div>
+</div>
+
+</div>
+
+			  </h3>
             </li>
+            <li class="counter__result-item">
+              <fieldset class="form__item goal-selection counter__result--hidden">
+                <legend class="heading">Выберите вашу цель</legend>
+                <div class="goal-buttons">
+                  <button id="goal-lose" class="goal-button">Уменьшить вес</button>
+				  <button id="goal-maintain" class="goal-button">Поддерживать вес</button>
+				  <button id="goal-gain" class="goal-button">Набрать вес</button>
+                </div>
+              </fieldset>
+            </li>
+<li class="counter__result-item">
+  <fieldset class="form__item progress-section counter__result--hidden">
+    <legend class="heading">Суточная норма</legend>
+    <div class="calories-progress-container">
+      <div class="calories-progress-bar">
+        <div class="calories-progress-bar-fill" id="calories-progress-bar-fill"></div>
+        <div class="calories-marker-container">
+          <div class="calories-marker" id="calories-marker"><span>0</span></div>
+        </div>
+      </div>
+      <div class="calories-labels">
+        <span>0</span>
+        <span>5000</span>
+      </div>
+    </div>
+    <div class="macronutrients">
+	<canvas id="macrosChart" width="96px" height="96px"></canvas>
+      <p>Белки: <span id="protein-result"></span> г.</p>
+      <p>Жиры: <span id="fat-result"></span> г.</p>
+      <p>Углеводы: <span id="carbs-result"></span> г.</p>
+      <p>Вода: <span id="water-result"></span> мл.</p>
+    </div>
+  </fieldset>
+</li>
+
+
           </ul>
         </fieldset>
       </section>
@@ -154,12 +223,14 @@
   <div class="toast-content">
     <i class="fas fa-solid fa-check check"></i>
     <div class="message">
-      <span class="text text-1">Готово!</span>
+      <span class="text text-1"></span>
     </div>
   </div>
   <i class="fa-solid fa-xmark close"></i>
-  <div class="progress"></div>
+  <div class="progress active"></div>
 </div>
-<script src="include/script.js" defer></script>
+<script src="include/bmi.js"></script>
+<script src="include/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

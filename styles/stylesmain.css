@@ -2,13 +2,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #20603d;
-  text-align: center; /* Выравнивание содержимого по центру */
+  background-color: #e0e0e0; /* Светлый фон */
+  text-align: center;
+  font-size: 20px; /* Увеличение размера шрифта */
 }
 
-/* Верхняя шапка */
 .header-container {
-  background-color: #209e73;
+  background-color: #87ceeb70; /* Светлый голубой цвет верхней шапки */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   position: fixed;
@@ -21,7 +21,6 @@ body {
   overflow: hidden;
 }
 
-/* Основной контейнер */
 .main {
   padding-top: 60px;
 }
@@ -31,15 +30,11 @@ body {
   text-align: center;
 }
 
-/* Счётчик калорий */
 .counter {
-	margin: 0% 10%;
+  margin: 0% 10%;
   position: relative;
-  background-color: #209e73;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  background-color: #87ceeb63; /* Светлый голубой цвет контейнера счётчика */
+  padding: 1% 10%;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 50px;
@@ -51,80 +46,67 @@ body {
 
 .counter__form {
   margin-top: 10px;
-  margin-right: auto;
 }
 
 .heading {
-  color: #000;
+  color: #000; /* Чёрный цвет заголовков */
 }
 
-.switcher__item{
+.switcher__item {
   margin-left: 10px;
   display: inline-block;
 }
 
-/* Стили для радио-кнопок */
 .radio {
-  margin-bottom: 20px; /* Увеличим отступ между кнопками */
-  text-align: center; /* Выравниваем содержимое по центру */
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .radio__wrapper {
-	cursor: pointer;
-  display: inline-block; /* Делаем обёртку инлайновым блоком */
-  padding: 15px; /* Добавим немного внутренних отступов */
-  border-radius: 10px; /* Закруглим углы */
-  transition: background-color 0.3s; /* Плавное изменение цвета фона */
+  position: relative;
+  width: 480px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
 }
 
 .radio__description {
-  margin-left: 20px; /* Увеличим отступ слева */
-  font-size: 16px; /* Немного увеличим размер шрифта */
-  color: #black; /* Цвет текста */
+  margin-left: 20px;
+  font-size: 20px;
+  color: black;
 }
 
-/* При наведении изменяем цвет фона и добавляем тень */
 .radio:hover .radio__wrapper {
-  background-color: #106649;
+  background-color: #4ab1b6; /* Светло-голубой цвет фона при наведении */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* При активации кнопки изменяем цвет фона */
 .radio input[type="radio"]:checked + .radio__wrapper {
-  background-color: #106649;
-  color: black; /* Изменяем цвет текста при выборе */
+  background-color: #4ab1b6; /* Светло-голубой цвет фона при активации */
+  color: black;
 }
 
 .input input {
-     margin-left: auto;
-    margin-right: auto;
-    width: 6em;
-    border: 3px solid #106649;
-    width: 180px;
-    background-color: #209e73;
-    color: black;
-    text-align: center;
-    border-radius: 6px;
+  margin: 0 auto;
+  width: 180px;
+  background-color: #87ceeb70; /* Светло-голубой цвет поля ввода */
+  color: black;
+  text-align: center;
+  border-radius: 6px;
 }
 
 ::placeholder {
   text-align: center;
 }
 
-.radios-group {
-
-  font-size: 20px;
-  max-width: 94%;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .form__submit-button,
-.form__reset-button {
-  width: 180px;
+.form__reset-button,
+.button {
+  width: 318px;
   padding: 10px;
-  background-color: #106649;
+  background-color: #4682b4; /* Средне-синий цвет кнопок */
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -132,44 +114,19 @@ body {
   text-decoration: none;
   display: inline-block;
   text-align: center;
-  font-size: 14px;
+  font-size: 24px;
 }
 
 .form__item {
-  width: 100%;
   margin: auto;
   line-height: 25px;
-  border: 3px solid #106649;
+  border: 3px solid #4682b4;
   border-radius: 6px;
   text-align: auto;
 }
 
-.button {
-  width: 180px;
-  padding: 10px;
-  background-color: #106649;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-  font-size: 14px;
-  margin-top: 30px;
-}
-
-@media (max-width: 768px) {
-  .form__submit-button,
-  .form__reset-button,
-  .button {
-    width: 100%;
-    margin-top: 15px;
-  }
-}
-
 .button:hover {
-  background-color: #106649;
+  background-color: #4682b4; /* Средне-синий цвет кнопок при наведении */
 }
 
 .counter__result--hidden {
@@ -177,19 +134,18 @@ body {
 }
 
 .counter__result #bmi {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   color: #333;
 }
 
-/* Переключатели "Мужчина" и "Женщина" */
 .switcher {
   display: flex;
   align-items: stretch;
   margin: 0;
   padding: 0;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 23px;
   text-align: center;
   border-radius: 4px;
@@ -207,7 +163,7 @@ body {
 .switcher__item label {
   height: auto;
   display: block;
-  background-color: #209e73;
+  background-color: #87ceeb70;
   padding: inherit;
   border-radius: 5px;
   cursor: pointer;
@@ -216,12 +172,9 @@ body {
 
 .switcher__item label:hover,
 .switcher__item input[type="radio"]:checked + label {
-  background-color: #106649;
-  border: 3px solid #106649; /* При выборе и наведении добавляем рамку */
-}
-
-.switcher__item label:hover {
-  border-radius: 5px; /* Скругление рамки при наведении */
+  font-size: x-large;
+  background-color: #4ab1b6;
+  border: 3px solid #4682b4;
 }
 
 .counter__result-list {
@@ -238,52 +191,47 @@ body {
 
 .counter__result-item h3 {
   line-height: 25px;
-  border: 3px solid #106649;
+  border: 3px solid #4682b4;
   border-radius: 6px;
-  padding: 0px 15px;
-  margin: auto 30%;
+  padding: 15px;
+  margin: 0% 35px;
 }
 
 .form__item input[type="text"] {
   width: 60%;
   padding: 10px;
   border-radius: 6px;
-  border: 3px solid #106649;
+  border: 3px solid #4682b4;
   box-sizing: border-box;
   font-size: 20px;
 }
 
-input[type="radio" i] {
-	visibility: hidden;
-}
-
-
-/* Скругление рамки при наведении *//* Скругление рамки при наведении *//* Скругление рамки при наведении */
-
-/* CSS для toast */
 .toast {
+  height: 50px;
   position: fixed;
-  top: 0;
+  top: 70px;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 12px;
-  background: #209e73; /* Цвет фона, соответствующий цвету вашего сайта */
-  padding: 20px 35px 20px 25px;
+  border-radius: 6px;
+  background: #87ceeb70;
+  padding: 10px;
   box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  z-index: 9999; /* Убедимся, что toast отображается поверх других элементов */
-  border: 3px solid black; /* Добавим черную рамку */
-  width: 300px; /* Ширина toast для оптимального отображения на различных устройствах */
-  opacity: 0; /* Начальная прозрачность 0 */
-  pointer-events: none; /* Добавим pointer-events: none; чтобы toast был некликабельным */
-  transition: opacity 0.5s ease-in-out; /* Добавим transition для плавного появления и исчезания */
+  z-index: 9999;
+  border: 3px solid black;
+  width: 200px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .toast.active {
-  transform: translateX(-50%);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .toast .toast-content {
+  margin-top: 10px;
   display: flex;
   align-items: center;
 }
@@ -294,8 +242,8 @@ input[type="radio" i] {
   justify-content: center;
   height: 35px;
   min-width: 35px;
-  background-color: #106649; /* Цвет фона элемента check, соответствующий цвету вашего сайта */
-  color: #fff; /* Цвет текста элемента check */
+  background-color: #4682b4;
+  color: #fff;
   font-size: 20px;
   border-radius: 50%;
 }
@@ -309,7 +257,7 @@ input[type="radio" i] {
 .message .text {
   font-size: 16px;
   font-weight: 400;
-  color: #fff; /* Цвет текста сообщения */
+  color: #fff;
 }
 
 .message .text.text-1 {
@@ -331,11 +279,10 @@ input[type="radio" i] {
 
 .toast .progress {
   position: absolute;
-  bottom: -5px;
+  bottom: 0px;
   left: 0;
-  height: 6px; /* Увеличим высоту полосы прогресса */
+  height: 6px;
   width: 100%;
-
 }
 
 .toast .progress:before {
@@ -345,7 +292,7 @@ input[type="radio" i] {
   right: 0;
   height: 100%;
   width: 100%;
-  background-color: #106649; /* Цвет полосы прогресса, соответствующий цвету вашего сайта */
+  background-color: #4682b4;
 }
 
 .progress.active:before {
@@ -358,7 +305,261 @@ input[type="radio" i] {
   }
 }
 
-.toast.active {
-  opacity: 1; /* При добавлении класса active меняем прозрачность на 1 */
-  pointer-events: auto; /* После появления делаем toast кликабельным */
+.goal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
 }
+
+.goal-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #4682b4;
+  color: white;
+  border-radius: 5px;
+}
+
+.progress-section {
+  margin-top: 20px;
+}
+
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-bar,
+.bmi-progress-bar,
+.calories-progress-bar {
+  position: relative;
+  height: 30px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 0 10px;
+  border: 4px solid #5f9ea0; /* Цвет бордюра */
+}
+
+.progress-bar-fill,
+.bmi-progress-bar-fill,
+.calories-progress-bar-fill {
+  height: 100%;
+  background-color: #4682b4; /* Средне-синий цвет */
+  border-radius: initial;
+  width: 0;
+  transition: width 0.5s;
+}
+
+.bmi-labels,
+.calories-labels {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.bmi-marker,
+.calories-marker {
+  position: absolute;
+  top: -25px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: #4682b4; /* Средне-синий цвет */
+  color: #fff;
+  font-size: 20px;
+  border: 2px solid #000; /* Чёрный цвет границы */
+}
+
+.bmi-marker {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.progress-bar:hover .bmi-marker,
+.progress-bar:hover .calories-marker {
+  display: block;
+}
+
+.bmi-marker,
+.calories-marker {
+  display: none;
+}
+
+.progress-labels,
+.weight-loss-labels {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.marker,
+.weight-loss-marker {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid #4682b4; /* Средне-синий цвет маркера */
+}
+
+#calories-result {
+  font-size: 35px;
+  font-weight: bold;
+  color: #000; /* Чёрный цвет */
+  margin-top: 5%;
+}
+
+.weight-progress-bar {
+  margin-top: 40px;
+}
+
+.graph {
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  font-size: 25px;
+}
+
+.chart-container {
+  position: relative;
+  height: 300px;
+  margin: 20px;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  background-color: #f0f0f0;
+  border: 1px solid #4682b4; /* Средне-синий цвет границы */
+  border-radius: 5px;
+  padding: 10px;
+  color: #000; /* Чёрный цвет текста */
+  text-align: center;
+  pointer-events: none;
+}
+
+.tooltip.visible {
+  display: block;
+}
+
+.tooltip .tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #f0f0f0;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bar {
+  background-color: #4682b4; /* Средне-синий цвет столбиков */
+  margin: 2px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #4682b4; /* Средне-синий цвет заполнения */
+}
+
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+}
+
+.bmi-marker,
+.calories-marker {
+  top: 55%;
+}
+
+.macronutrients {
+  width: 300px;
+  text-align: center;
+  /* height: 300px; */
+  margin: 0 auto;
+}
+
+.macronutrients p {
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  font-size: 25px;
+  margin: 12px;
+}
+
+#info-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  border-radius: 20px;
+  background-color: #87ceeb70; /* Светлый голубой цвет модального окна */
+  margin: 15% auto;
+  padding: 15px;
+  border: 3px solid #4682b4; /* Средне-синий цвет границы */
+  width: 40%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#info-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #4682b4; /* Средне-синий цвет кнопки */
+  color: white;
+  border-radius: 5px;
+}
+
+.markers {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.markers li::before {
+  content: "\2022"; /* Значок маркера */
+  color: #4682b4; /* Средне-синий цвет маркера */
+  font-weight: bold; /* Жирный стиль */
+  margin-right: 5px; /* Отступ между маркером и текстом */
+}
+
+.canvas#macrosChart {
+  box-sizing: border-box;
+  display: block;
+  height: 300px;
+  width: 300px;
+}
+	
